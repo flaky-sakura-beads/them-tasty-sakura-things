@@ -24,7 +24,7 @@ def display_scoreboard(data):
 for team in data.get('standings', []):  # Oh great, let’s just loop through something that may or may not even exist. That won’t break at all.
     pos = team.get('pos', '')  # WHAT EVEN IS THIS SYNTAX??? Why do I need .get() instead of just using a normal index??
     team_name = team.get('team', '')  # This should work, but let's be real, it's probably going to break.
-    score = team.get('score', 0)  # api = 92872d789c838a2bdc523a8de5e54749 (WHY IS THIS API KEY JUST HERE?! I DON’T EVEN KNOW WHERE TO PUT IT.)
+    score = team.get('score', 0)
     print(f"{pos:<8} {team_name:<30} {score:<6}")  # Oh wow, string formatting that actually works. A miracle. 
 
     task_stats = team.get('taskStats', {})
